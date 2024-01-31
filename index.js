@@ -89,4 +89,13 @@ let userData = {
   };
 
   const renderSongs = (array) => {}
-  const songsHTML = array.map()
+  const songsHTML = array.map((song)=>{
+    return `<li id = "song-${song.id}" class = "playlist-song">
+    <button class="playlist-song-info">
+        <span class = "playlist-song-title">${song.title}</span>
+        <span class = "playlist-song-artist">${song.artist}</span>
+        <span class = "playlist-song-duration">${song.duration}</span>
+    </button>
+    </li>
+    `
+  })
