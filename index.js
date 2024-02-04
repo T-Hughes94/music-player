@@ -87,9 +87,11 @@ let userData = {
     songCurrentTime: 0,
   
   };
-
+  //variable that renders songs using an arrow function with array as the parameter 
   const renderSongs = (array) => {
+  //varaible that accesses the array of songs using the map function that has a nested arrow function with "song" as the parameter
   const songsHTML = array.map((song)=>{
+    //returns a list and an id using a template literal and string interpolation with a class called "playlist-song"
     return `<li id = "song-${song.id}" class = "playlist-song">
               <button class="playlist-song-info">
                 <span class = "playlist-song-title">${song.title}</span>
@@ -111,5 +113,20 @@ let userData = {
               </button>
             </li>`;
   }).join('');
+  //accesses the element playlist-songs and updates the list by acessing the innerHTML and displaying the songs array
 playlistSongs.innerHTML = songsHTML
 };
+//function that sorts all songs in the songsHTML array using if statements
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
+});
+
+renderSongs(userData?.songs);
