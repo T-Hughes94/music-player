@@ -1,10 +1,11 @@
+//
 const playlistSongs = document.getElementById('playlist-songs');
 const playButton = document.getElementById('play');
 const pauseButton = document.getElementById('pause')
 const nextButton = document.getElementById("next");
 const previousButton = document.getElementById("previous");
 const shuffleButton = document.getElementById("shuffle");
-
+//variable called allSongs that stores all song objects in an array
 const allSongs = [
 {
     id: 0,
@@ -78,15 +79,20 @@ const allSongs = [
   },
 ];
 
-
+//variable for establishing audio in the file 
 const audio = new Audio()
-
+//variable called userData an object that uses the spread operator to access allSongs to display the current song 
+//and the current time for selected song
 let userData = {
     songs: [...allSongs],
     currentSong: null,
     songCurrentTime: 0,
   
   };
+  //defines a function called playSong using const that takes id as the parameter 
+  const playSong = (id)=>{
+    const song = userData?.songs.find((song) => song.id === id);
+  }
   //variable that renders songs using an arrow function with array as the parameter 
   const renderSongs = (array) => {
   //varaible that accesses the array of songs using the map function that has a nested arrow function with "song" as the parameter
@@ -128,5 +134,6 @@ userData?.songs.sort((a,b) => {
 
   return 0;
 });
-
+//calls the renderSongs function with userData?.songs as the argument
 renderSongs(userData?.songs);
+
