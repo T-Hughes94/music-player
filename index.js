@@ -92,6 +92,8 @@ let userData = {
   //defines a function called playSong using const that takes id as the parameter 
   const playSong = (id)=>{
     const song = userData?.songs.find((song) => song.id === id);
+    audio.src = song.src;
+    audio.title = song.title;
   }
   //variable that renders songs using an arrow function with array as the parameter 
   const renderSongs = (array) => {
