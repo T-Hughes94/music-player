@@ -94,6 +94,9 @@ let userData = {
     const song = userData?.songs.find((song) => song.id === id);
     audio.src = song.src;
     audio.title = song.title;
+    if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
+      audio.currentTime = 0; 
+    }
   }
   //variable that renders songs using an arrow function with array as the parameter 
   const renderSongs = (array) => {
