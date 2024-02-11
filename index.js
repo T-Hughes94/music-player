@@ -96,6 +96,8 @@ let userData = {
     audio.title = song.title;
     if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
       audio.currentTime = 0; 
+    }else{
+      audio.currentTime = userData?.songCurrentTime
     }
   }
   //variable that renders songs using an arrow function with array as the parameter 
