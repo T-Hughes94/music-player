@@ -130,6 +130,10 @@ const playPreviousSong = () => {
   }
 };
 
+const highlightCurrentSong = ()=>{
+  const playlistSongElements = document.querySelectorAll('.playlist-song')
+}
+
 const renderSongs = (array) => {
   const songsHTML = array
     .map((song)=> {
