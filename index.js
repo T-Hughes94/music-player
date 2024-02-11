@@ -99,6 +99,7 @@ let userData = {
     }else{
       audio.currentTime = userData?.songCurrentTime
     }
+  userData.currentSong = song
   }
   //variable that renders songs using an arrow function with array as the parameter 
   const renderSongs = (array) => {
