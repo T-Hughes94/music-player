@@ -144,6 +144,9 @@ const shuffle = ()=>{
 }
 
 const deleteSong = (id)=>{
+  if(userData?.currentSong?.id === id){
+    
+  } 
   userData.songs = userData?.songs.filter((song)=> song.id !== id);
   renderSongs(userData?.songs)
   highlightCurrentSong()
