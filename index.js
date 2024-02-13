@@ -240,6 +240,8 @@ previousButton.addEventListener("click", playPreviousSong);
 
 shuffleButton.addEventListener("click", shuffle)
 
+audio.addEventListener("ended",()=> {})
+
 userData?.songs.sort((a,b) => {
   if (a.title < b.title) {
     return -1;
