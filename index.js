@@ -242,7 +242,10 @@ shuffleButton.addEventListener("click", shuffle)
 
 audio.addEventListener("ended",()=> {
   const currentSongIndex = getCurrentSongIndex()
-  const nextSongExists = currentSongIndex < userData.songs.length - 1
+  const nextSongExists = userData?.songs[currentSongIndex + 1] !== undefined;
+  if(nextSongExists){
+    playNextSong()
+  }
 })
 
 userData?.songs.sort((a,b) => {
